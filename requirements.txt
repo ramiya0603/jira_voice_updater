@@ -1,0 +1,6 @@
+flask
+vosk
+sounddevice
+soundfile
+requests
+python-dotenv
