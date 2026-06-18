@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Jira Voice Updater</h2>
+
+<form method="POST" action="/process" enctype="multipart/form-data">
+Issue Key:
+<input type="text" name="issue_key" required><br><br>
+
+Audio File (.wav):
+<input type="file" name="audio" required><br><br>
+
+<label>
+<input type="checkbox" name="post_to_jira">
+Post to Jira
+</label><br><br>
+
+<button type="submit">Process</button>
+</form>
+
+{% if transcript %}
+<h3>Transcript</h3>
+<pre>{{ transcript }}</pre>
+{% endif %}
+
+{% if comment %}
+<h3>Generated Jira Comment</h3>
+<pre>{{ comment }}</pre>
+{% endif %}
+
+</body>
+</html>
